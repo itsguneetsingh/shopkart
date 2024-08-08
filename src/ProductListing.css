@@ -1,0 +1,33 @@
+.product-card {
+    max-height: 80vh;
+    width: 20vw;
+  }
+  
+  .heading {
+    font-family: syne;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  
+  .images .arrow {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+  }
+
+  .images{
+    position: relative;
+    width: fit-content;
+  }
+
+  .slick-prev {
+    left: 70% !important;
+    top: -10% !important;
+    z-index: 0;
+    
+  }
+  .slick-next {
+    right: 10% !important;
+    top: -10% !important;
+    z-index: 0;
+  }

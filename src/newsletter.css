@@ -1,0 +1,177 @@
+.background{
+    background-image: url('../public/newsletter-background.svg');
+    height: 55vh;
+    padding: 70px 100px 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+h1{
+    font-size: 26px;
+    font-family: 'syne';
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0px;
+}
+
+input{
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+h2, input{
+    font-size: 18px;
+    font-family: 'work sans';
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+h2{
+    margin-top: 7px;
+}
+
+
+.form{
+    border-bottom: 1px solid white;
+    margin-top: 30px;
+    padding: 0px 350px 7px 10px;
+}
+
+#newletter-heading{
+    width: 337px;
+    padding-top: 10px;
+}
+
+#newsletter-form{
+    /* margin-right: 165px; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* max-height: 180px; */
+
+}
+
+#send-button{
+    background-color: transparent;
+    color: #F07E15;
+    box-shadow: none;
+    border: 2px solid #F07E15;
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    bottom: 90px;
+    right: 90px;
+    z-index: 1;
+    font-family: 'work sans';
+    font-size: 26px;
+}
+
+#send-button:hover{
+    background-color: #F07E15;
+    color: #1A1A1A;
+}
+
+#heading{
+    position: absolute;
+    bottom: 40px;
+    width: 1159px;
+}
+
+.heading-text{
+    color: white;
+    font-family: 'syne';
+    font-weight: 800;
+    font-size: 135px;
+    line-height: 100px;
+}
+
+#copyright{
+    background-color: black;
+    height: 8vh;
+    color: white;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 750px) {
+    .background {
+        background-image: url('../public/newsletter-background.svg');
+        height: auto; /* Adjust height to accommodate stacked elements */
+        padding: 30px 20px 0px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    #heading {
+        position: static; /* Make sure heading is in normal flow */
+        width: 100%; /* Ensure it takes full width */
+        text-align: left;
+        margin-bottom: 20px; /* Add some spacing at the bottom */
+        margin-top: 30px;
+    }
+
+    .heading-text {
+        font-size: 55px;
+        line-height: 30px;
+        text-align: center; /* Center the text */
+    }
+
+    .form {
+        border-bottom: 1px solid white;
+        margin-top: 30px;
+        padding: 0px 30px 7px 10px;
+        width: 90%; /* Make form take full width */
+        text-align: left;
+    }
+
+    #newsletter-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center form elements */
+        width: 100%;
+    }
+
+    h1, h2 {
+        text-align: center; /* Center text in headings */
+        width: 100%; /* Make headings take full width */
+    }
+
+    input {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        width: 100%; /* Ensure input takes full width */
+    }
+
+    #send-button {
+        position: absolute;
+        margin: 20px auto;
+        width: 100px;
+        height: 100px;
+        bottom: 30px;
+        right: 10px;
+        border-width: 1px;
+        font-weight: 300;
+        font-size: medium;
+    }
+
+    #newletter-heading {
+        align-self: center;
+        width: 100%; /* Make sure the heading takes full width */
+    }
+
+    #copyright{
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+}
