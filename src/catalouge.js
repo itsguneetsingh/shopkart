@@ -1,11 +1,24 @@
 import './catalouge.css';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './ProductListing.css';
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Catalouge = ({products}) => {
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     
     const sliderRef = useRef(null);
 
@@ -14,12 +27,10 @@ const Catalouge = ({products}) => {
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: windowWidth > 750 ? 3.5 : 1,
     slidesToScroll: 1,
     lazyload: true,
     };
-
-    console.log(products);
 
     return (
         <div id='catalouge'>

@@ -4,6 +4,7 @@ import './home.css';
 const Home = ({categories}) => {
   const [showDropDown, setShowDropdown] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showMenuOverlay, setShowMenuOverlay] = useState(false); // State for menu overlay
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,6 +16,11 @@ const Home = ({categories}) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const toggleMenuOverlay = () => {
+    setShowMenuOverlay(!showMenuOverlay);
+    console.log(showMenuOverlay);
+  };
 
   return (
     <div id='background'>
@@ -55,7 +61,7 @@ const Home = ({categories}) => {
               {showDropDown && (
                 <div className='products'>
                   {categories.map((category, index) => (
-                    <button key={index} className='product-options' onClick={console.log({category}, ' is clicked')}>{category}</button>
+                    <button key={index} className='product-options' >{category}</button>
                   ))}
                 </div>
               )}
@@ -68,7 +74,7 @@ const Home = ({categories}) => {
           <div className='navbar-top'>
             <span className='navbar-text' style={{fontSize: '2em', fontFamily: 'Poppins', fontWeight: '200'}}>ShopKart</span>
             <div>
-              <button id='menu'><img src='hamburger menu.svg' alt="Menu" /></button>
+              <button id='menu' onClick={toggleMenuOverlay}><img src='hamburger menu.svg' alt="Menu" /></button>
             </div>
           </div>
           <div id='dividing-line'>
@@ -103,6 +109,43 @@ const Home = ({categories}) => {
           <img src='arrow.svg' width={10} style={{paddingLeft:'10px'}} alt="Arrow" />
         </div>
       </div>
+      {showMenuOverlay && (
+        
+        <div id='menu-overlay'>
+           <div id='overlay'>
+              <div className='header'>
+            <div className='left-header'>
+              <img src="Truck.svg" style={{marginRight: '5px'}} alt="Truck" />
+              <span className='left-text'>Free Delivery</span>
+              <span className='left-text'>|</span>
+              <span className='left-text'>Return Policy</span>
+            </div>
+            <div className='right-header'>
+              <span className='right-text' id='login'>Login</span>
+              <span className='right-text' id='follow'>Follow US</span>
+              <img src="FB.svg" className='socials' alt="Facebook" />
+              <img src="IN.svg" className='socials' alt="Instagram" />
+              <img src="TW.svg" className='socials' alt="Twitter" />
+              <img src="IG.svg" className='socials' alt="Instagram" />
+            </div>
+          </div>
+          <div className='navbar-top'>
+            <span className='navbar-text' style={{fontSize: '2em', fontFamily: 'Poppins', fontWeight: '200'}}>ShopKart</span>
+            <div>
+              <button id='menu' onClick={toggleMenuOverlay}><img src='cross.svg' alt="Menu" /></button>
+            </div>
+          </div>
+          <div id='dividing-line'>
+            <hr id='top-line'/>
+            <img src='star1.svg' id='top-star'/>
+          </div>
+        </div>
+          <button className='menu-overlay-button'>HOME</button>
+          <button className='menu-overlay-button'>ABOUT</button>
+          <button className='menu-overlay-button'>OUR PRODUCTS</button>
+          <button className='menu-overlay-button'>CONTACT US</button>
+        </div>
+      )}
     </div>
   );
 }

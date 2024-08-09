@@ -13,10 +13,11 @@ function App() {
       try {
         const response = await fetch('https://dummyjson.com/products');
         const data = await response.json();
+        // console.log(data);
         setProducts(data?.products);
         
         // Extract unique category names
-        const uniqueCategories = [...new Set(data.map(product => product.category.name))];
+        const uniqueCategories = [...new Set(data.products.map(product => product.category))];
         setCategories(uniqueCategories);
         
       } catch (error) {

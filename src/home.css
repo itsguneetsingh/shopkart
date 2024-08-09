@@ -14,14 +14,14 @@
     position: relative; /* Required for the pseudo-element to be positioned correctly */
 }
 
+
 #background::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    /* width: 100%; */
-    
+    width: 100%;
     background-image: url('https://s3-alpha-sig.figma.com/img/de39/1a52/c4668920b65cd75a6ec7e6e49957ed1c?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C6-36xEXnfO3S0Wl1XErGgUBlTd3MciNFQ3yOQhaUpabJhhPFLkovd3Eyre-wi8W8legDYCL0SkEDySERaG4IreAnM1o2hc0CS-vN1v4pV2Ww-VQXw22kvf7Oxz926y3GVTw8EHQXZLoJp1qcAr2vPIEc27VvVavDfFw-m22riD8utjpmg7KEVsLtjo7d-0dkRPw6bA7LRxcoT2ygF9-B7CdolvymQctG7MtPFXM6ebkTATxfnA2OA5fyCmKRK2B9Kww~ocUPpTnFGvhWmYFEK957uwRN0JTkhlkvaNOIMYatLwFtxG5AByTWOWW0Vg1G~QKSMeUhdvLpj7BArJYRg__'); /* Path to the image */
     z-index: 1; /* Ensure the overlay is on top of the background image */
 }
@@ -80,8 +80,8 @@
 
 #top-star{
     position: absolute;
-    left: 32.5%;
-    top: 41%;
+    left: 31.5%;
+    top: 51%;
 }
 
 .navbar-bottom {
@@ -98,6 +98,7 @@
     margin: 0px 10px 0px 10px;
     font-size: small;
     font-weight: 300;
+    margin-top: 20px;
 }
 
 .navbar-bottom-text {
@@ -132,6 +133,7 @@
     position: absolute;
     /* right: 500px; */
     bottom: 33px;
+    z-index: 1;
 }
 
 #circle-star {
@@ -298,6 +300,13 @@
 }
 
 @media screen and (max-width: 750px) {
+    .menu{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        background-color: #1A1A1A;
+    }
+
     #background {
         height: 77vh;
         overflow: hidden;
@@ -362,7 +371,7 @@
 
     #circle-star {
         position: absolute;
-        top: 22%;
+        top: 23%;
         right: -19%;
         z-index: 0; /* Ensure the star is behind the model */
         /* transform: translate(87%, -9%); */
@@ -399,8 +408,8 @@
 
     #top-star{
         position: absolute;
-        left: 32.5%;
-        top: 41%;
+        right: 70%;
+        top: 40%;
         display: none;
     }
 
@@ -423,6 +432,58 @@
         background-color: transparent;
         box-shadow: none;
         border: none;
+        cursor: pointer;
+    }
+    
+      
+      .menu-overlay-button {
+        background: none;
+        color: white;
+        border: none;
+        font-weight: bolder;
+        font-size: 1.5em;
+        margin: 40px 0;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      #exit-button{
+        position: absolute;
+        top: 0px;
+        right: 10px;
+      }    
+
+      #menu-overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(22, 22, 21, 0.99);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+    
+    #menu-overlay::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url('https://s3-alpha-sig.figma.com/img/de39/1a52/c4668920b65cd75a6ec7e6e49957ed1c?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C6-36xEXnfO3S0Wl1XErGgUBlTd3MciNFQ3yOQhaUpabJhhPFLkovd3Eyre-wi8W8legDYCL0SkEDySERaG4IreAnM1o2hc0CS-vN1v4pV2Ww-VQXw22kvf7Oxz926y3GVTw8EHQXZLoJp1qcAr2vPIEc27VvVavDfFw-m22riD8utjpmg7KEVsLtjo7d-0dkRPw6bA7LRxcoT2ygF9-B7CdolvymQctG7MtPFXM6ebkTATxfnA2OA5fyCmKRK2B9Kww~ocUPpTnFGvhWmYFEK957uwRN0JTkhlkvaNOIMYatLwFtxG5AByTWOWW0Vg1G~QKSMeUhdvLpj7BArJYRg__'); /* Path to the image */
+        z-index: 1; /* Ensure the overlay is on top of the background image */
+    }
+
+    #overlay{
+        width: 100vw;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
     }
     
 }
