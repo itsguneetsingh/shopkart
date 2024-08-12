@@ -1,7 +1,7 @@
 .background{
     background-image: url('../public/newsletter-background.svg');
-    height: 55vh;
-    padding: 70px 100px 0px 100px;
+    height: 57vh;
+    padding: 60px 100px 0px 100px;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -36,7 +36,8 @@ h2{
 
 .form{
     border-bottom: 1px solid white;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-bottom: 15px;
     padding: 0px 350px 7px 10px;
 }
 
@@ -46,7 +47,7 @@ h2{
 }
 
 #newsletter-form{
-    /* margin-right: 165px; */
+    margin-right: 165px;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */

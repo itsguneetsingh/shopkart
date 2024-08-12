@@ -7,6 +7,7 @@ import Newsletter from './Newsletter';
 function App() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+  const [chosenCategory, setChosenCategory] = useState('BEAUTY');
   
   useEffect(() => {
     const fetchProducts = async () => {
@@ -17,7 +18,7 @@ function App() {
         setProducts(data?.products);
         
         // Extract unique category names
-        const uniqueCategories = [...new Set(data.products.map(product => product.category))];
+        const uniqueCategories = [...new Set(data.products.map(product => product.category.toUpperCase()))];
         setCategories(uniqueCategories);
         
       } catch (error) {
@@ -30,8 +31,8 @@ function App() {
 
   return (
     <div>
-      <Home categories={categories}/>
-      <Catalouge products={products}/>
+      <Home categories={categories} setChosenCategory={setChosenCategory}/>
+      <Catalouge products={products} categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory}/>
       <Newsletter />
     </div>
   );

@@ -7,14 +7,14 @@
 }
 
 #catalouge{
-    height: 100vh;
+    height: 95vh;
 }
 
 #line {
     width: 46vw;
     position: absolute;
     color: black;
-    background-color: black;
+    background-color: #000;
     border: none;
     height: 1px;
     top: 2.5px;
@@ -79,14 +79,15 @@
 
 .types{
     margin-bottom: 30px;
-    font-size: large;
+    font-size: 18px;
     width: 310px;
     font-family: 'work sans';
     transition-duration: 0.15s;
+    cursor: pointer;
 }
 
 .types:hover{
-    font-size: xx-large;
+    font-size: 26px;
     font-family: 'syne';
     font-weight: 600;
 }

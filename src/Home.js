@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './home.css';
 
-const Home = ({categories}) => {
+const Home = ({categories, setChosenCategory}) => {
   const [showDropDown, setShowDropdown] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showMenuOverlay, setShowMenuOverlay] = useState(false); // State for menu overlay
@@ -61,7 +61,7 @@ const Home = ({categories}) => {
               {showDropDown && (
                 <div className='products'>
                   {categories.map((category, index) => (
-                    <button key={index} className='product-options' >{category}</button>
+                    <button key={index} className='product-options' onClick={setChosenCategory({category})}>{category}</button>
                   ))}
                 </div>
               )}
